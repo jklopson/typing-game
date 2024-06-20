@@ -1,3 +1,5 @@
+let isWordTypedCorrectly = false;
+let typedKeys = [];
 
 // Helper function to get a random word from an array
 function getRandomWord(words) {
@@ -17,5 +19,38 @@ async function fetchWords() {
     }
 }
 
-// Call the fetchWords function to fetch and display a random word
-fetchWords();
+document.addEventListener('keydown', (event) => {
+    const typedKey = event.key;
+
+    if (typedKey === 'Backspace') {
+        typedKeys.pop(); // Remove the most recently added element
+    } else {
+        typedKeys.push(typedKey);
+    }
+
+    const typedWord = typedKeys.join('');
+    const currentWord = document.getElementById('typing-text').textContent;
+
+    if (typedWord === currentWord) {
+        isWordTypedCorrectly = true;
+        typedKeys = [];
+    }
+});
+
+
+
+
+// Main function to run all methods
+function main() {
+    fetchWords();
+    setInterval(() => {
+        if (isWordTypedCorrectly) {
+            fetchWords();
+            isWordTypedCorrectly = false;
+        }
+    }, 50);
+
+}
+
+// Call the main function
+main();

@@ -175,7 +175,7 @@ computer
 concern
 condition
 conference
-Congress
+congress
 consider
 consumer
 contain
@@ -398,7 +398,7 @@ huge
 human
 hundred
 husband
-I
+i
 idea
 identify
 if
@@ -533,8 +533,8 @@ mouth
 move
 movement
 movie
-Mr
-Mrs
+mr
+mrs
 much
 music
 must
@@ -635,7 +635,7 @@ plan
 plant
 play
 player
-PM
+pm
 point
 police
 policy
